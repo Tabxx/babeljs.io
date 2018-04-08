@@ -5831,11 +5831,11 @@ div.highlighter-rouge {
   color: #FFF;
   margin-bottom: 20px;
   overflow: hidden;
-  padding: 4em 15px 2em;
+  padding: 3em 15px 2em;
   position: relative; }
   @media (min-width: 992px) {
     .hero {
-      padding: 6em 15px 3em; } }
+      padding: 3em 15px 3em; } }
   .hero::before {
     background: url(../images/logo.svg) no-repeat center center;
     background-size: cover;
