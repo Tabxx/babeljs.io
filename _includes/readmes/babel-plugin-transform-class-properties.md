@@ -26,7 +26,7 @@
   // 设置的属性初始值不在原型上
   console.log(myBork.__proto__.boundFunction); // > undefined
 
-  // 绑定函数绑定到类实例
+  // 绑定 Bound 函数到类实例
   console.log(myBork.boundFunction.call(undefined)); // > "bork"
 
   // 该类拥有静态函数
