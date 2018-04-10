@@ -1,10 +1,10 @@
 # babel-plugin-transform-async-to-module-method
 
-> Turn async functions into a Bluebird coroutine
+> 将 async 函数转换为 Bluebird 协同程序
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 async function foo() {
@@ -12,7 +12,7 @@ async function foo() {
 }
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var Bluebird = require("bluebird");
@@ -22,19 +22,19 @@ var foo = Bluebird.coroutine(function* () {
 });
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-async-to-module-method
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
-Without options:
+未包含选项：
 
 ```json
 {
@@ -42,7 +42,7 @@ Without options:
 }
 ```
 
-With options:
+包含选项：
 
 ```json
 {
@@ -55,13 +55,13 @@ With options:
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-async-to-module-method script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
