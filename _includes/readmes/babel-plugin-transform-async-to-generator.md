@@ -1,10 +1,10 @@
 # babel-plugin-transform-async-to-generator
 
-> Turn async functions into ES2015 generators
+> 将 async 函数转为 ES2015 的 generators
 
-## Example
+## 示例
 
-**In**
+**输入**
 
 ```javascript
 async function foo() {
@@ -12,7 +12,7 @@ async function foo() {
 }
 ```
 
-**Out**
+**输出**
 
 ```javascript
 var _asyncToGenerator = function (fn) {
@@ -23,15 +23,15 @@ var foo = _asyncToGenerator(function* () {
 });
 ```
 
-## Installation
+## 安装
 
 ```sh
 npm install --save-dev babel-plugin-transform-async-to-generator
 ```
 
-## Usage
+## 用法
 
-### Via `.babelrc` (Recommended)
+### 通过 `.babelrc`（推荐）
 
 **.babelrc**
 
@@ -41,13 +41,13 @@ npm install --save-dev babel-plugin-transform-async-to-generator
 }
 ```
 
-### Via CLI
+### 通过 CLI
 
 ```sh
 babel --plugins transform-async-to-generator script.js
 ```
 
-### Via Node API
+### 通过 Node API
 
 ```javascript
 require("babel-core").transform("code", {
@@ -55,6 +55,6 @@ require("babel-core").transform("code", {
 });
 ```
 
-## References
+## 参考
 
-* [Proposal: Async Functions for ECMAScript](https://github.com/tc39/ecmascript-asyncawait)
+* [提案：ECMAScript 中的 Async 函数](https://github.com/tc39/ecmascript-asyncawait)
