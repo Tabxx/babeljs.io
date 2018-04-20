@@ -5,8 +5,8 @@
     <description>用于编写下一代 JavaScript 的编译器</description>
     <link>https://babeljs.cn/</link>
     <atom:link href="https://babeljs.cn/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Apr 2018 08:06:07 +0000</pubDate>
-    <lastBuildDate>Tue, 17 Apr 2018 08:06:07 +0000</lastBuildDate>
+    <pubDate>Fri, 20 Apr 2018 02:45:06 +0000</pubDate>
+    <lastBuildDate>Fri, 20 Apr 2018 02:45:06 +0000</lastBuildDate>
     <generator>Jekyll v3.5.2</generator>
     
       <item>
@@ -1727,7 +1727,9 @@ Although we forgot to make an announcement post earlier, here’s our progress u
     
       <item>
         <title>Upgrade to Babel 7 (WIP)</title>
-        <description>&lt;p&gt;Refer users to this document when upgrading to Babel 7 (currently alpha).&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://new.babeljs.io/docs/en/next/v7-migration.html&quot;&gt;EDIT: please refer to the new upgrade page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Refer users to this document when upgrading to Babel 7 (currently alpha).&lt;/p&gt;
 
 &lt;p&gt;Because not every breaking change will affect every project, we’ve sorted the sections by the likelihood of a change breaking tests when upgrading.&lt;/p&gt;
 
@@ -2001,7 +2003,9 @@ See &lt;a href=&quot;https://github.com/nodejs/LTS&quot;&gt;nodejs/LTS&lt;/a&gt;
     
       <item>
         <title>Upgrade to Babel 7 for Tool Authors (WIP)</title>
-        <description>&lt;p&gt;Refer users to this document for those that create tools that depend on Babel (such as Babel plugins).&lt;/p&gt;
+        <description>&lt;p&gt;&lt;a href=&quot;http://new.babeljs.io/docs/en/next/v7-migration-api.html&quot;&gt;EDIT: please refer to the new upgrade page&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Refer users to this document for those that create tools that depend on Babel (such as Babel plugins).&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Also check out the &lt;a href=&quot;/blog/2017/03/01/upgrade-to-babel-7.html&quot;&gt;User Upgrade Guide&lt;/a&gt; for other relevant changes.&lt;/p&gt;
