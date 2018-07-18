@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>tools/babel_register/usage · Babel</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="To include it you will need to require it at the top of the **entry point**"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="tools/babel_register/usage · Babel"/><meta property="og:type" content="website"/><meta property="og:url" content="https://babeljs.io/index.html"/><meta property="og:description" content="To include it you will need to require it at the top of the **entry point**"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"/><link rel="alternate" type="application/atom+xml" href="https://babeljs.io/blog/atom.xml" title="Babel Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://babeljs.io/blog/feed.xml" title="Babel Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-114990275-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/babel.svg" alt="Babel"/></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/next" target="_self">文档</a></li><li class=""><a href="/en/setup" target="_self">配置</a></li><li class=""><a href="/en/repl" target="_self">试用</a></li><li class=""><a href="/blog" target="_self">博客</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="https://opencollective.com/babel" target="_self">赞助</a></li><li class=""><a href="/en/team" target="_self">团队</a></li><li class=""><a href="https://github.com/babel/babel" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/babel/website/blob/master/docs/tools/babel_register/usage.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">tools/babel_register/usage</h1></header><article><div><span><p>To include it you will need to require it at the top of the <strong>entry point</strong>
+to your application.</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">"babel-register"</span>);
+</code></pre>
+<p>If you are using ES6's <code>import</code> syntax in your application's <strong>entry point</strong>, you
+should instead import at the top of the <strong>entry point</strong> to ensure it is loaded first:</p>
+<pre><code class="hljs css languages- javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">"babel-register"</span>;
+</code></pre>
+<p>All subsequent files required by node with the extensions <code>.es6</code>, <code>.es</code>, <code>.jsx</code> and <code>.js</code> will be transformed by Babel. The polyfill specified in <a href="/docs/usage/polyfill/">polyfill</a> is also automatically required.</p>
+<blockquote class="babel-callout babel-callout-warning">
+  <h4>Not suitable for libraries</h4>
+  <p>
+    The require hook automatically hooks itself into <strong>all</strong> node requires. This will pollute the global scope and introduce conflicts. Because of this it's not suitable for libraries, if however you're writing an application then it's completely fine to use.
+  </p>
+</blockquote>
+<blockquote class="babel-callout babel-callout-warning">
+  <h4>Not meant for production use</h4>
+  <p>
+    The require hook is primarily recommended for simple cases.
+  </p>
+</blockquote>
+<blockquote class="babel-callout babel-callout-info">
+  <p>
+    For full documentation on the Babel require hook see the <a href="/docs/usage/require/">usage docs</a>.
+  </p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/babel.svg" alt="Babel" width="66" height="58"/></a><div><h5>文档</h5><a href="/docs/en/learn.html">学习 ES2015</a></div><div><h5>社区</h5><a href="/en/users.html">用户</a><a href="http://stackoverflow.com/questions/tagged/babeljs" rel="noopener noreferrer" target="_blank">Stack Overflow</a><a href="https://babeljs.slack.com/">Slack 通道</a><a href="https://twitter.com/babeljs" rel="noopener noreferrer" target="_blank">Twitter</a></div><div><h5>更多</h5><a href="/blog">博客</a><a href="https://github.com/babel">GitHub Org</a><a href="https://github.com/babel/babel">GitHub Repo</a><a href="https://github.com/babel/website">Website Repo</a><a href="https://old.babeljs.io"> 旧版网址 6.x </a><a href="http://henryzoo.com/babel.github.io">旧版网址 5.x </a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                
+                apiKey: 'd42906b043c5422ea07b44fd49c40a0d',
+                indexName: 'babeljs',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

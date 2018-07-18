@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Babel Blog</title>
+        <link>https://babeljs.io/blog</link>
+        <description>The best place to stay up-to-date with the latest Babel news and events.</description>
+        <lastBuildDate>Mon, 16 Jul 2018 06:00:00 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>Babel Blog</title>
+            <url>https://babeljs.io/img/babel.svg</url>
+            <link>https://babeljs.io/blog</link>
+        </image>
+        <item>
+            <title><![CDATA[Announcing Babel's New Partnership with trivago!]]></title>
+            <link>https://babeljs.io/blog/2018/07/16/announcing-babels-new-partnership-with-trivago.html</link>
+            <guid>https://babeljs.io/blog/2018/07/16/announcing-babels-new-partnership-with-trivago.html</guid>
+            <pubDate>Mon, 16 Jul 2018 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>We are happy to announce a new partnership with <a href="https://www.trivago.com/">trivago</a>, the hotel search website.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[On Consuming (and Publishing) ES2015+ Packages]]></title>
+            <link>https://babeljs.io/blog/2018/06/26/on-consuming-and-publishing-es2015+-packages.html</link>
+            <guid>https://babeljs.io/blog/2018/06/26/on-consuming-and-publishing-es2015+-packages.html</guid>
+            <pubDate>Tue, 26 Jun 2018 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>For those of us that need to support older browsers, we run a compiler like Babel over application code. But that's not all of the code that we ship to browsers; there's also the code in our <code>node_modules</code>.</p>
+<p>Can we make compiling our dependencies not just possible, but normal?</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Nearing the 7.0 Release]]></title>
+            <link>https://babeljs.io/blog/2017/12/27/nearing-the-7.0-release.html</link>
+            <guid>https://babeljs.io/blog/2017/12/27/nearing-the-7.0-release.html</guid>
+            <pubDate>Wed, 27 Dec 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<blockquote>
+<p>Check out <a href="https://babeljs.io/blog/2017/09/12/planning-for-7.0">Planning for 7.0</a> for the last updates throughout the 7.0 pre-releases. If something isn't clear in this post let me know!</p>
+</blockquote>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Babel Turns Three]]></title>
+            <link>https://babeljs.io/blog/2017/10/05/babel-turns-three.html</link>
+            <guid>https://babeljs.io/blog/2017/10/05/babel-turns-three.html</guid>
+            <pubDate>Thu, 05 Oct 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<blockquote>
+<p>Happy Birthday Babel! 🎂 (Sept 28)</p>
+</blockquote>
+<p>Babel has really come a long way since <a href="https://github.com/kittens">Sebastian</a> started the project only 3 years ago! A while back it was renamed from <a href="https://babeljs.io/blog/2015/02/15/not-born-to-die">6to5 to Babel</a>; for good reason as it has signficantly contributed to the use of ES2015+ by <a href="https://babeljs.io/users">many companies</a>, libraries, and developers alike.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Planning for 7.0]]></title>
+            <link>https://babeljs.io/blog/2017/09/12/planning-for-7.0.html</link>
+            <guid>https://babeljs.io/blog/2017/09/12/planning-for-7.0.html</guid>
+            <pubDate>Tue, 12 Sep 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>If you didn't know already, we're planning on releasing a 7.0 version soon 🙌 ! Work on it actually started back in February, when I just wanted to make a release to drop Node 0.10/0.12 support and remove babel-runtime and various other code. And since then, we've done releases up to <code>alpha.20</code>.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Zero-config code transformation with babel-plugin-macros]]></title>
+            <link>https://babeljs.io/blog/2017/09/11/zero-config-with-babel-macros.html</link>
+            <guid>https://babeljs.io/blog/2017/09/11/zero-config-with-babel-macros.html</guid>
+            <pubDate>Mon, 11 Sep 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Babel started out as a transpiler to let you write the latest version of the ECMAScript specification but ship to environments that don't implement those features yet. But it has become much more than that. <a href="https://tomdale.net/2017/09/compilers-are-the-new-frameworks/">&quot;Compilers are the New Frameworks&quot;</a> says <a href="https://twitter.com/tomdale">Tom Dale</a> and I could not agree more. We're seeing more and more compile-time optimizations for libraries and frameworks. I'm not talking about syntax extensions to the language, but simple code transformations that enable patterns that would be difficult to accomplish otherwise.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Contributing to Babel: Three Lessons to Remember]]></title>
+            <link>https://babeljs.io/blog/2017/08/16/gsoc-karl-1.html</link>
+            <guid>https://babeljs.io/blog/2017/08/16/gsoc-karl-1.html</guid>
+            <pubDate>Wed, 16 Aug 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Getting to work your way around a new code base always poses its challenges, and Babel was no exception.</p>
+<p>I’ve been working with Babel as part of the Google Summer of Code 2017 program, working to update Babel transforms and the Babylon parser to accommodate changes to specifications and implementing new features.</p>
+<p>Here’s a few things I’ve learnt from my adventures so far.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Personal Experiences at Babel #1 — A PR with Unusually High Number of Reviews]]></title>
+            <link>https://babeljs.io/blog/2017/08/11/gsoc-peey-1.html</link>
+            <guid>https://babeljs.io/blog/2017/08/11/gsoc-peey-1.html</guid>
+            <pubDate>Fri, 11 Aug 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>We landed the <a href="https://github.com/babel/babylon/pull/587">parser support</a> for
+<a href="https://tc39.github.io/proposal-decorators/">the stage-2 decorators spec</a> last
+week at Babylon — the parser for Babel. If you don’t know what a decorator is,
+the gist of it is that a decorator gives some concise syntax to affect the
+definition of a class or a class method which you decorate.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Babel and Summer of Code 2017]]></title>
+            <link>https://babeljs.io/blog/2017/08/09/babel-and-summer-of-code.html</link>
+            <guid>https://babeljs.io/blog/2017/08/09/babel-and-summer-of-code.html</guid>
+            <pubDate>Wed, 09 Aug 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>For the first time, Babel is participating in <em>Summer of Code</em>!
+Although we forgot to make an announcement post earlier, here's our progress update 😊</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Upgrade to Babel 7 for Tool Authors (WIP)]]></title>
+            <link>https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7-for-tool-authors.html</link>
+            <guid>https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7-for-tool-authors.html</guid>
+            <pubDate>Wed, 01 Mar 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>We are moving the migration guide to a docs page instead of a blog post!</p>
+<h2><a class="anchor" aria-hidden="true" id="check-out-v7-migration-api-https-babeljsio-docs-en-next-v7-migration-api"></a><a href="#check-out-v7-migration-api-https-babeljsio-docs-en-next-v7-migration-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Check out <a href="https://babeljs.io/docs/en/next/v7-migration-api">v7-migration-api</a>!</h2>
+<p>Refer users to this document for those that create tools that depend on Babel (such as Babel</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Upgrade to Babel 7 (moved)]]></title>
+            <link>https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7.html</link>
+            <guid>https://babeljs.io/blog/2017/03/01/upgrade-to-babel-7.html</guid>
+            <pubDate>Wed, 01 Mar 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>We are moving the migration guide to a docs page instead of a blog post!</p>
+<h2><a class="anchor" aria-hidden="true" id="check-out-v7-migration-https-babeljsio-docs-en-next-v7-migration"></a><a href="#check-out-v7-migration-https-babeljsio-docs-en-next-v7-migration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Check out <a href="https://babeljs.io/docs/en/next/v7-migration">v7-migration</a>!</h2>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[6.23.0 Released]]></title>
+            <link>https://babeljs.io/blog/2017/02/13/6.23.0.html</link>
+            <guid>https://babeljs.io/blog/2017/02/13/6.23.0.html</guid>
+            <pubDate>Mon, 13 Feb 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>In this release: multiple improvements to the <code>react-constant-elements</code> plugin by <a href="https://github.com/STRML">@STRML</a>, some codegen optimizations, and lots of bug fixes! Thanks to <a href="https://github.com/loganfsmyth">@loganfsmyth</a> for the release + reviews!</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[The State of Babel]]></title>
+            <link>https://babeljs.io/blog/2016/12/07/the-state-of-babel.html</link>
+            <guid>https://babeljs.io/blog/2016/12/07/the-state-of-babel.html</guid>
+            <pubDate>Wed, 07 Dec 2016 06:00:00 GMT</pubDate>
+            <description><![CDATA[<ul>
+<li><a href="https://babeljs.io/blog/2016/12/07/the-state-of-babel#some-history">Some History</a></li>
+<li><a href="https://babeljs.io/blog/2016/12/07/the-state-of-babel#current-status">Current Status</a></li>
+<li><a href="https://babeljs.io/blog/2016/12/07/the-state-of-babel#the-future">The Future</a></li>
+<li><a href="https://babeljs.io/blog/2016/12/07/the-state-of-babel#community">Community</a></li>
+</ul>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[6.19.0 Released]]></title>
+            <link>https://babeljs.io/blog/2016/11/16/6.19.0.html</link>
+            <guid>https://babeljs.io/blog/2016/11/16/6.19.0.html</guid>
+            <pubDate>Wed, 16 Nov 2016 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p><code>object-rest-spread</code> works standalone and a few new plugin options APIs were added!</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[6.18.0 Released]]></title>
+            <link>https://babeljs.io/blog/2016/10/24/6.18.0.html</link>
+            <guid>https://babeljs.io/blog/2016/10/24/6.18.0.html</guid>
+            <pubDate>Mon, 24 Oct 2016 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>More flow updates, and lots of fixes!</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[6.16.0 Released]]></title>
+            <link>https://babeljs.io/blog/2016/09/28/6.16.0.html</link>
+            <guid>https://babeljs.io/blog/2016/09/28/6.16.0.html</guid>
+            <pubDate>Wed, 28 Sep 2016 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p style="text-align:center">
+Happy Birthday Babel 🎂 !
+</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Babili (babel-minify)]]></title>
+            <link>https://babeljs.io/blog/2016/08/26/babili.html</link>
+            <guid>https://babeljs.io/blog/2016/08/26/babili.html</guid>
+            <pubDate>Fri, 26 Aug 2016 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>We released <a href="https://github.com/babel/babili">Babili</a> as beta (0.0.1) a few days ago under an MIT license!</p>
+<blockquote>
+<p>Try it out in the Babel <a href="http://babeljs.io/repl/#?babili=true&amp;evaluate=false">REPL</a> and report any bugs or potential optimizations we can make! There's also a <a href="https://babeljs.slack.com/messages/minify/">#minify</a> slack room!</p>
+</blockquote>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[6.14.0 Released]]></title>
+            <link>https://babeljs.io/blog/2016/08/24/6.14.0.html</link>
+            <guid>https://babeljs.io/blog/2016/08/24/6.14.0.html</guid>
+            <pubDate>Wed, 24 Aug 2016 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>A new <code>es2017</code>, <code>latest</code> preset, and lots of fixes in this release.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Babel Doctor]]></title>
+            <link>https://babeljs.io/blog/2015/11/03/babel-doctor.html</link>
+            <guid>https://babeljs.io/blog/2015/11/03/babel-doctor.html</guid>
+            <pubDate>Tue, 03 Nov 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<blockquote>
+<p>Babel Doctor is <s>heavily inspired</s> ripped from the awesome
+<a href="https://github.com/yeoman/doctor">Yeoman Doctor</a> by
+<a href="https://github.com/sindresorhus">Sindre Sorhus</a>.</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>babel-doctor has been removed as of v6.18.0 of <code>babel-cli</code>. If anyone needs it we will bring it back as a standalone npm module called <code>babel-doctor</code>.</p>
+</blockquote>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Setting up Babel 6]]></title>
+            <link>https://babeljs.io/blog/2015/10/31/setting-up-babel-6.html</link>
+            <guid>https://babeljs.io/blog/2015/10/31/setting-up-babel-6.html</guid>
+            <pubDate>Sat, 31 Oct 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Babel 6 is fresh off the press and we’re still getting a lot sorted out. In the past two days we've seen more activity on GitHub and Slack than ever before. Everyone who has been helping out has been doing a great job.</p>
+<p>However, the documentation is still lacking at this point, I’m currently going through and creating an entirely new “Getting Started” section of the site.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[6.0.0 Released]]></title>
+            <link>https://babeljs.io/blog/2015/10/29/6.0.0.html</link>
+            <guid>https://babeljs.io/blog/2015/10/29/6.0.0.html</guid>
+            <pubDate>Thu, 29 Oct 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<blockquote>
+<p><strong>NOTE:</strong> Not all integrations have been updated yet. This is a very disruptive major
+so please bear with us as we smooth out the edges.</p>
+</blockquote>
+<p>It’s hard to believe it’s been a year since the Babel project started, but there was a birthday cake, so it must be real!</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[React on ES6+]]></title>
+            <link>https://babeljs.io/blog/2015/07/07/react-on-es6-plus.html</link>
+            <guid>https://babeljs.io/blog/2015/07/07/react-on-es6-plus.html</guid>
+            <pubDate>Tue, 07 Jul 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>While redesigning <a href="https://instagram.com/instagram/">Instagram Web</a> from the inside out this year, we enjoyed using a number of ES6+ features to write our React components. Allow me to highlight some of the ways that these new language features can change the way you write a React app, making it easier and more fun than ever.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Function Bind Syntax]]></title>
+            <link>https://babeljs.io/blog/2015/05/14/function-bind.html</link>
+            <guid>https://babeljs.io/blog/2015/05/14/function-bind.html</guid>
+            <pubDate>Thu, 14 May 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Babel 5.4 was just released and with it comes support for a new
+<a href="https://github.com/zenparsing/es-function-bind">experimental ES7 syntax</a>
+proposed by Kevin Smith (<a href="https://github.com/zenparsing">@zenparsing</a>) and
+implemented in Babel by Ingvar Stepanyan
+(<a href="https://github.com/RReverser">@RReverser</a>).</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[5.0.0 Released]]></title>
+            <link>https://babeljs.io/blog/2015/03/31/5.0.0.html</link>
+            <guid>https://babeljs.io/blog/2015/03/31/5.0.0.html</guid>
+            <pubDate>Tue, 31 Mar 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>In the past few months Babel has been welcomed into several major communities
+such as Node, React, Ember, Backbone, Angular, Rails, and many others. We
+launched the <a href="/users">Users page</a> only a few weeks ago and it's really cool to
+see everyone that is using it. Companies like CloudFlare, Netflix, Mozilla, and
+Yahoo!. Projects like Ghost, Atom, Mapbox, and so many more.</p>
+<p>We've seen tons of blog posts, talks, events, courses all about ES6+ using
+Babel, and official Babel tools have been downloaded nearly 2 million times.</p>
+<p>Today we are making by far the largest release of Babel ever.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Babel <3 React]]></title>
+            <link>https://babeljs.io/blog/2015/02/23/babel-loves-react.html</link>
+            <guid>https://babeljs.io/blog/2015/02/23/babel-loves-react.html</guid>
+            <pubDate>Mon, 23 Feb 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>One of the things that surprises people quite often is that Babel supports JSX
+out of the box.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Not Born to Die]]></title>
+            <link>https://babeljs.io/blog/2015/02/15/not-born-to-die.html</link>
+            <guid>https://babeljs.io/blog/2015/02/15/not-born-to-die.html</guid>
+            <pubDate>Sun, 15 Feb 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>I like to start off our blog posts with the latest big thing 6to5 has achieved. We haven’t reached it quite yet, but in a few days 6to5 and 6to5-core will have been downloaded <strong>half a million times</strong>, and in a month or so it will be over a <strong>million</strong> times.</p>
+<p>There has been a bit of confusion in the past as to 6to5’s role in the JavaScript community, which can largely be attributed to its name.</p>
+<p>6to5 was not born to die.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[2to3]]></title>
+            <link>https://babeljs.io/blog/2015/01/27/2to3.html</link>
+            <guid>https://babeljs.io/blog/2015/01/27/2to3.html</guid>
+            <pubDate>Tue, 27 Jan 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>These past few weeks we’ve seen lots of activity on 6to5; thousands are downloading it every day from all corners of the world. In the past month, over 200 issues have been closed. Since the 2.0 release, there have been 867 commits and 60 minor and patch releases. It’s now among the top 1% of most downloaded packages on npm, with nearly 100k downloads in the last month alone.</p>
+<p>Today we are releasing 3.0.</p>
+]]></description>
+        </item>
+        <item>
+            <title><![CDATA[6to5 + esnext]]></title>
+            <link>https://babeljs.io/blog/2015/01/12/6to5-esnext.html</link>
+            <guid>https://babeljs.io/blog/2015/01/12/6to5-esnext.html</guid>
+            <pubDate>Mon, 12 Jan 2015 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>The past few months have been exciting for 6to5. We’ve gone from being an educational project to having 100k downloads on npm, there’s been 1,800 commits and 155 releases, we now support every major JavaScript build system, and recently we became a Sprockets 4.0 default. To top it off, our new website and documentation received tens of thousands of pageviews, and has been featured by several publications including JavaScript Weekly.</p>
+]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,198 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>React on ES6+ · Babel</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="While redesigning [Instagram Web](https://instagram.com/instagram/) from the inside out this year, we enjoyed using a number of ES6+ features to write our React components. Allow me to highlight some of the ways that these new language features can change the way you write a React app, making it easier and more fun than ever."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="React on ES6+ · Babel"/><meta property="og:type" content="website"/><meta property="og:url" content="https://babeljs.io/blog/2015/07/07/react-on-es6-plus"/><meta property="og:description" content="While redesigning [Instagram Web](https://instagram.com/instagram/) from the inside out this year, we enjoyed using a number of ES6+ features to write our React components. Allow me to highlight some of the ways that these new language features can change the way you write a React app, making it easier and more fun than ever."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"/><link rel="alternate" type="application/atom+xml" href="https://babeljs.io/blog/atom.xml" title="Babel Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://babeljs.io/blog/feed.xml" title="Babel Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-114990275-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/babel.svg" alt="Babel"/></a><a href="/versions"><h3>6.x</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en" target="_self">文档</a></li><li class=""><a href="/en/setup" target="_self">配置</a></li><li class=""><a href="/en/repl" target="_self">试用</a></li><li class="siteNavGroupActive"><a href="/blog" target="_self">博客</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="https://opencollective.com/babel" target="_self">赞助</a></li><li class=""><a href="/en/team" target="_self">团队</a></li><li class=""><a href="https://github.com/babel/babel" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul><li class="navListItem"><a class="navItem" href="/blog/2018/07/16/announcing-babels-new-partnership-with-trivago">Announcing Babel&#x27;s New Partnership with trivago!</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/06/26/on-consuming-and-publishing-es2015+-packages">On Consuming (and Publishing) ES2015+ Packages</a></li><li class="navListItem"><a class="navItem" href="/blog/2017/12/27/nearing-the-7.0-release">Nearing the 7.0 Release</a></li><li class="navListItem"><a class="navItem" href="/blog/2017/10/05/babel-turns-three">Babel Turns Three</a></li><li class="navListItem"><a class="navItem" href="/blog/2017/09/12/planning-for-7.0">Planning for 7.0</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2015/07/07/react-on-es6-plus">React on ES6+</a></h1><p class="post-meta">July 7, 2015</p><div class="authorBlock"><p class="post-authorName"><a href="https://twitter.com/steveluscher" target="_blank" rel="noreferrer noopener">Steven Luscher</a></p></div></header><div><span><p>While redesigning <a href="https://instagram.com/instagram/">Instagram Web</a> from the inside out this year, we enjoyed using a number of ES6+ features to write our React components. Allow me to highlight some of the ways that these new language features can change the way you write a React app, making it easier and more fun than ever.</p>
+<!--truncate-->
+<h2><a class="anchor" aria-hidden="true" id="classes"></a><a href="#classes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Classes</h2>
+<p>By far the most outwardly visible change to how we write React components using ES6+ comes about when we choose to use the <strong><a href="https://babeljs.io/docs/learn-es2015/#classes">class definition syntax</a></strong>. Instead of using the <code>React.createClass</code> method to define a component, we can define a bonafide ES6 class that extends <code>React.Component</code>:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Photo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">{this.props.caption}</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{this.props.src}</span> /&gt;</span>;
+  }
+}
+</span></code></pre>
+<p>Right away, you'll notice a subtle difference – a more terse syntax is available to you when defining classes:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// The ES5 way</span>
+<span class="hljs-keyword">var</span> Photo = React.createClass({
+  <span class="hljs-attr">handleDoubleTap</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{ … },
+  <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ … },
+});
+</code></pre>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// The ES6+ way</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Photo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  handleDoubleTap(e) { … }
+  render() { … }
+}
+</code></pre>
+<p>Notably, we've dropped two parentheses and a trailing semicolon, and for each method declared we omit a colon, a <code>function</code> keyword, and a comma.</p>
+<p>All of the lifecycle methods but one can be defined as you would expect when using the new class syntax. The class' <code>constructor</code> now assumes the role previously filled by <code>componentWillMount</code>:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// The ES5 way</span>
+<span class="hljs-keyword">var</span> EmbedModal = React.createClass({
+  <span class="hljs-attr">componentWillMount</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ … },
+});
+</code></pre>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// The ES6+ way</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EmbedModal</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-comment">// Operations usually carried out in componentWillMount go here</span>
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="property-initializers"></a><a href="#property-initializers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Property initializers</h2>
+<p>In the ES6+ class world, prop types and defaults live as static properties on the class itself. These, as well as the component's initial state, can be defined using ES7 <strong><a href="https://gist.github.com/jeffmo/054df782c05639da2adb">property initializers</a></strong>:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// The ES5 way</span>
+<span class="hljs-keyword">var</span> Video = React.createClass({
+  <span class="hljs-attr">getDefaultProps</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">autoPlay</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">maxLoops</span>: <span class="hljs-number">10</span>,
+    };
+  },
+  <span class="hljs-attr">getInitialState</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">loopsRemaining</span>: <span class="hljs-keyword">this</span>.props.maxLoops,
+    };
+  },
+  <span class="hljs-attr">propTypes</span>: {
+    <span class="hljs-attr">autoPlay</span>: React.PropTypes.bool.isRequired,
+    <span class="hljs-attr">maxLoops</span>: React.PropTypes.number.isRequired,
+    <span class="hljs-attr">posterFrameSrc</span>: React.PropTypes.string.isRequired,
+    <span class="hljs-attr">videoSrc</span>: React.PropTypes.string.isRequired,
+  },
+});
+</code></pre>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// The ES6+ way</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Video</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">static</span> defaultProps = {
+    <span class="hljs-attr">autoPlay</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">maxLoops</span>: <span class="hljs-number">10</span>,
+  }
+  <span class="hljs-keyword">static</span> propTypes = {
+    <span class="hljs-attr">autoPlay</span>: React.PropTypes.bool.isRequired,
+    <span class="hljs-attr">maxLoops</span>: React.PropTypes.number.isRequired,
+    <span class="hljs-attr">posterFrameSrc</span>: React.PropTypes.string.isRequired,
+    <span class="hljs-attr">videoSrc</span>: React.PropTypes.string.isRequired,
+  }
+  state = {
+    <span class="hljs-attr">loopsRemaining</span>: <span class="hljs-keyword">this</span>.props.maxLoops,
+  }
+}
+</code></pre>
+<p>ES7 property initializers operate inside the class' constructor, where <code>this</code> refers to the instance of the class under construction, so the initial state can still be made to depend on <code>this.props</code>. Notably, we no longer have to define prop defaults and the initial state object in terms of a getter function.</p>
+<h2><a class="anchor" aria-hidden="true" id="arrow-functions"></a><a href="#arrow-functions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arrow functions</h2>
+<p>The <code>React.createClass</code> method used to perform some extra binding work on your component's instance methods to make sure that, inside them, the <code>this</code> keyword would refer to the instance of the component in question.</p>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// Autobinding, brought to you by React.createClass</span>
+<span class="hljs-keyword">var</span> PostInfo = React.createClass({
+  <span class="hljs-attr">handleOptionsButtonClick</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-comment">// Here, 'this' refers to the component instance.</span>
+    <span class="hljs-keyword">this</span>.setState({<span class="hljs-attr">showOptionsModal</span>: <span class="hljs-literal">true</span>});
+  },
+});
+</code></pre>
+<p>Since we don't involve the <code>React.createClass</code> method when we define components using the ES6+ class syntax, it would seem that we need to manually bind instance methods wherever we want this behavior:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-comment">// Manually bind, wherever you need to</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostInfo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  <span class="hljs-keyword">constructor</span>(props) {
+    <span class="hljs-keyword">super</span>(props);
+    <span class="hljs-comment">// Manually bind this method to the component instance...</span>
+    <span class="hljs-keyword">this</span>.handleOptionsButtonClick = <span class="hljs-keyword">this</span>.handleOptionsButtonClick.bind(<span class="hljs-keyword">this</span>);
+  }
+  handleOptionsButtonClick(e) {
+    <span class="hljs-comment">// ...to ensure that 'this' refers to the component instance here.</span>
+    <span class="hljs-keyword">this</span>.setState({<span class="hljs-attr">showOptionsModal</span>: <span class="hljs-literal">true</span>});
+  }
+}
+</code></pre>
+<p>Luckily, by combining two ES6+ features – <strong><a href="https://babeljs.io/docs/learn-es2015/#arrows">arrow functions</a></strong> and property initializers – opt-in binding to the component instance becomes a breeze:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PostInfo</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  handleOptionsButtonClick = <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+    <span class="hljs-keyword">this</span>.setState({<span class="hljs-attr">showOptionsModal</span>: <span class="hljs-literal">true</span>});
+  }
+}
+</code></pre>
+<p>The body of ES6 arrow functions share the same lexical <code>this</code> as the code that surrounds them, which gets us the desired result because of the way that ES7 property initializers are scoped. <a href="https://babeljs.io/repl/#?experimental=true&amp;evaluate=true&amp;loose=false&amp;spec=false&amp;code=class%20PostInfo%20extends%20React.Component%20%7B%0A%09handleOptionsButtonClick%20%3D%20(e)%20%3D%3E%20%7B%0A%20%20%20%20this.setState(%7BshowOptionsModal%3A%20true%7D)%3B%0A%20%20%7D%0A%7D">Peek under the hood</a> to see why this works.</p>
+<h2><a class="anchor" aria-hidden="true" id="dynamic-property-names-template-strings"></a><a href="#dynamic-property-names-template-strings" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dynamic property names &amp; template strings</h2>
+<p>One of the <strong><a href="https://babeljs.io/docs/learn-es2015/#enhanced-object-literals">enhancements to object literals</a></strong> includes the ability to assign to a derived property name. We might have originally done something like this to set a piece of state:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-keyword">var</span> Form = React.createClass({
+  <span class="hljs-attr">onChange</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">inputName, e</span>) </span>{
+    <span class="hljs-keyword">var</span> stateToSet = {};
+    stateToSet[inputName + <span class="hljs-string">'Value'</span>] = e.target.value;
+    <span class="hljs-keyword">this</span>.setState(stateToSet);
+  },
+});
+</code></pre>
+<p>Now, we have the ability to construct objects whose property names are determined by a JavaScript expression at runtime. Here, we use a <strong><a href="https://babeljs.io/docs/learn-es2015/#template-strings">template string</a></strong> to determine which property to set on state:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Form</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  onChange(inputName, e) {
+    <span class="hljs-keyword">this</span>.setState({
+      [<span class="hljs-string">`<span class="hljs-subst">${inputName}</span>Value`</span>]: e.target.value,
+    });
+  }
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="destructuring-spread-attributes"></a><a href="#destructuring-spread-attributes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Destructuring &amp; spread attributes</h2>
+<p>Often when composing components, we might want to pass down <em>most</em> of a parent component's props to a child component, but not all of them. In combining ES6+ <strong><a href="https://babeljs.io/docs/learn-es2015/#destructuring">destructuring</a></strong> with JSX <strong><a href="https://facebook.github.io/react/docs/jsx-spread.html">spread attributes</a></strong>, this becomes possible without ceremony:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AutoloadingPostsGrid</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>{
+  render() {
+    <span class="hljs-keyword">const</span> {
+      className,
+      ...others  <span class="hljs-comment">// contains all properties of this.props except for className</span>
+    } = <span class="hljs-keyword">this</span>.props;
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{className}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">PostsGrid</span> {<span class="hljs-attr">...others</span>} /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.handleLoadMoreClick}</span>&gt;</span>Load more<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    );
+  }
+}
+</span></code></pre>
+<p>We can combine JSX spread attributes with regular attributes too, taking advantage of a simple precedence rule to implement overrides and defaults. This element will acquire the <code>className</code> “override” even if there exists a <code>className</code> property in <code>this.props</code>:</p>
+<pre><code class="hljs css languages- js">&lt;div {...this.props} className="override"&gt;
+  …
+&lt;/div&gt;
+</code></pre>
+<p>This element will regularly have the <code>className</code> “base” unless there exists a <code>className</code> property in <code>this.props</code> to override it:</p>
+<pre><code class="hljs css languages- js">&lt;div className="base" {...this.props}&gt;
+  …
+&lt;/div&gt;
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="thanks-for-reading"></a><a href="#thanks-for-reading" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thanks for reading</h2>
+<p>I hope that you enjoy using ES6+ language features to write React code as much as we do. Thanks to my colleagues for their contributions to this post, and thanks especially to the Babel team for making the future available to all of us, today.</p>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#classes">Classes</a></li><li><a href="#property-initializers">Property initializers</a></li><li><a href="#arrow-functions">Arrow functions</a></li><li><a href="#dynamic-property-names-template-strings">Dynamic property names &amp; template strings</a></li><li><a href="#destructuring-spread-attributes">Destructuring &amp; spread attributes</a></li><li><a href="#thanks-for-reading">Thanks for reading</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/babel.svg" alt="Babel" width="66" height="58"/></a><div><h5>文档</h5><a href="/docs/en/learn.html">学习 ES2015</a></div><div><h5>社区</h5><a href="/en/users.html">用户</a><a href="http://stackoverflow.com/questions/tagged/babeljs" rel="noopener noreferrer" target="_blank">Stack Overflow</a><a href="https://babeljs.slack.com/">Slack 通道</a><a href="https://twitter.com/babeljs" rel="noopener noreferrer" target="_blank">Twitter</a></div><div><h5>更多</h5><a href="/blog">博客</a><a href="https://github.com/babel">GitHub Org</a><a href="https://github.com/babel/babel">GitHub Repo</a><a href="https://github.com/babel/website">Website Repo</a><a href="https://old.babeljs.io"> 旧版网址 6.x </a><a href="http://henryzoo.com/babel.github.io">旧版网址 5.x </a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                
+                apiKey: 'd42906b043c5422ea07b44fd49c40a0d',
+                indexName: 'babeljs',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

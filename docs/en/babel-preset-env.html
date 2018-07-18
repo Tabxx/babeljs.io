@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>babel-preset-env · Babel</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="```sh"/><meta name="docsearch:version" content="6.x"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="babel-preset-env · Babel"/><meta property="og:type" content="website"/><meta property="og:url" content="https://babeljs.io/index.html"/><meta property="og:description" content="```sh"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"/><link rel="alternate" type="application/atom+xml" href="https://babeljs.io/blog/atom.xml" title="Babel Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://babeljs.io/blog/feed.xml" title="Babel Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-114990275-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/babel.svg" alt="Babel"/></a><a href="/versions"><h3>6.x</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en" target="_self">文档</a></li><li class=""><a href="/en/setup" target="_self">配置</a></li><li class=""><a href="/en/repl" target="_self">试用</a></li><li class=""><a href="/blog" target="_self">博客</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="https://opencollective.com/babel" target="_self">赞助</a></li><li class=""><a href="/en/team" target="_self">团队</a></li><li class=""><a href="https://github.com/babel/babel" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Presets</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en">What is Babel?</a></li><li class="navListItem"><a class="navItem" href="/docs/en/learn">Learn ES2015</a></li><li class="navListItem"><a class="navItem" href="/docs/en/editors">Editors</a></li><li class="navListItem"><a class="navItem" href="/docs/en/plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/en/caveats">Caveats</a></li><li class="navListItem"><a class="navItem" href="/docs/en/faq">FAQ</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/babelrc">.babelrc</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-cli">babel-cli</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-polyfill">babel-polyfill</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-plugin-transform-runtime">transform-runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-register">babel-register</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Presets</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/babel-preset-env">env</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-es2015">es2015</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-es2016">es2016</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-es2017">es2017</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-latest">latest</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-stage-0">stage-0</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-stage-1">stage-1</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-stage-2">stage-2</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-stage-3">stage-3</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-flow">flow</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-react">react</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-minify">minify</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tooling</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/babylon">babylon</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-core">babel-core</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-generator">babel-generator</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-code-frame">babel-code-frame</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-helpers">babel-helpers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-runtime">babel-runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-template">babel-template</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-traverse">babel-traverse</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-types">babel-types</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/babel/website/blob/master/docs/preset-env.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">babel-preset-env</h1></header><article><div><span><pre><code class="hljs css languages- sh">npm install babel-preset-env --save-dev
+</code></pre>
+<p>Without any configuration options, babel-preset-env behaves exactly the same as babel-preset-latest (or babel-preset-es2015, babel-preset-es2016, and babel-preset-es2017 together).</p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [<span class="hljs-string">"env"</span>]
+}
+</code></pre>
+<p>You can also configure it to only include the polyfills and transforms needed for the browsers you support. Compiling only what's needed can make your bundles smaller and your life easier.</p>
+<p>This example only includes the polyfills and code transforms needed for the last two versions of each browser, and versions of Safari greater than or equal to 7. We use <a href="https://github.com/ai/browserslist">browserslist</a> to parse this information, so you can use <a href="https://github.com/ai/browserslist#queries">any valid query format supported by browserslist</a>.</p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [<span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"browsers"</span>: [<span class="hljs-string">"last 2 versions"</span>, <span class="hljs-string">"safari &gt;= 7"</span>]
+      }
+    }]
+  ]
+}
+</code></pre>
+<p>Similarly, if you're targeting Node.js instead of the browser, you can configure babel-preset-env to only include the polyfills and transforms necessary for a particular version:</p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [<span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"node"</span>: <span class="hljs-string">"6.10"</span>
+      }
+    }]
+  ]
+}
+</code></pre>
+<p>For convenience, you can use <code>&quot;node&quot;: &quot;current&quot;</code> to only include the necessary polyfills and transforms for the Node.js version that you use to run Babel:</p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [<span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"node"</span>: <span class="hljs-string">"current"</span>
+      }
+    }]
+  ]
+}
+</code></pre>
+<p>Check out the many options (especially <code>useBuiltIns</code> to polyfill less)!</p>
+<ul>
+<li><a href="#how-it-works">How it Works</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#caveats">Caveats</a></li>
+<li><a href="#other-cool-projects">Other Cool Projects</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="how-it-works"></a><a href="#how-it-works" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How it Works</h2>
+<h3><a class="anchor" aria-hidden="true" id="determine-environment-support-for-ecmascript-features"></a><a href="#determine-environment-support-for-ecmascript-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Determine environment support for ECMAScript features</h3>
+<p>Use external data such as <a href="https://github.com/kangax/compat-table"><code>compat-table</code></a> to determine browser support. (We should create PRs there when necessary)</p>
+<p><img src="https://cloud.githubusercontent.com/assets/588473/19214029/58deebce-8d48-11e6-9004-ee3fbcb75d8b.png" alt=""></p>
+<p>We can periodically run <a href="https://github.com/babel/babel-preset-env/blob/master/scripts/build-data.js">build-data.js</a> which generates <a href="https://github.com/babel/babel-preset-env/blob/master/data/plugins.json">plugins.json</a>.</p>
+<p>Ref: <a href="https://github.com/babel/babel-preset-env/issues/7">#7</a></p>
+<h3><a class="anchor" aria-hidden="true" id="maintain-a-mapping-between-javascript-features-and-babel-plugins"></a><a href="#maintain-a-mapping-between-javascript-features-and-babel-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Maintain a mapping between JavaScript features and Babel plugins</h3>
+<blockquote>
+<p>Currently located at <a href="https://github.com/babel/babel-preset-env/blob/master/data/plugin-features.js">plugin-features.js</a>.</p>
+</blockquote>
+<p>This should be straightforward to do in most cases. There might be cases where plugins should be split up more or certain plugins aren't standalone enough (or impossible to do).</p>
+<h3><a class="anchor" aria-hidden="true" id="support-all-plugins-in-babel-that-are-considered-latest"></a><a href="#support-all-plugins-in-babel-that-are-considered-latest" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Support all plugins in Babel that are considered <code>latest</code></h3>
+<blockquote>
+<p>Default behavior without options is the same as <code>babel-preset-latest</code>.</p>
+</blockquote>
+<p>It won't include <code>stage-x</code> plugins. env will support all plugins in what we consider the latest version of JavaScript (by matching what we do in <a href="http://babeljs.io/docs/plugins/preset-latest/"><code>babel-preset-latest</code></a>).</p>
+<p>Ref: <a href="https://github.com/babel/babel-preset-env/issues/14">#14</a></p>
+<h3><a class="anchor" aria-hidden="true" id="determine-the-lowest-common-denominator-of-plugins-to-be-included-in-the-preset"></a><a href="#determine-the-lowest-common-denominator-of-plugins-to-be-included-in-the-preset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Determine the lowest common denominator of plugins to be included in the preset</h3>
+<p>If you are targeting IE 8 and Chrome 55 it will include all plugins required by IE 8 since you would need to support both still.</p>
+<h3><a class="anchor" aria-hidden="true" id="support-a-target-option-node-current-to-compile-for-the-currently-running-node-version"></a><a href="#support-a-target-option-node-current-to-compile-for-the-currently-running-node-version" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Support a target option <code>&quot;node&quot;: &quot;current&quot;</code> to compile for the currently running node version.</h3>
+<p>For example, if you are building on Node 6, arrow functions won't be converted, but they will if you build on Node 0.12.</p>
+<h3><a class="anchor" aria-hidden="true" id="support-a-browsers-option-like-autoprefixer"></a><a href="#support-a-browsers-option-like-autoprefixer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Support a <code>browsers</code> option like autoprefixer</h3>
+<p>Use <a href="https://github.com/ai/browserslist">browserslist</a> to declare supported environments by performing queries like <code>&gt; 1%, last 2 versions</code>.</p>
+<p>Ref: <a href="https://github.com/babel/babel-preset-env/pull/19">#19</a></p>
+<h2><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
+<p>With <a href="https://www.npmjs.com">npm</a>:</p>
+<pre><code class="hljs css languages- sh">npm install --save-dev babel-preset-env
+</code></pre>
+<p>Or <a href="https://yarnpkg.com">yarn</a>:</p>
+<pre><code class="hljs css languages- sh">yarn add babel-preset-env --dev
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<p>The default behavior without options runs all transforms (behaves the same as <a href="https://babeljs.io/docs/plugins/preset-latest/">babel-preset-latest</a>).</p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [<span class="hljs-string">"env"</span>]
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h2>
+<p>For more information on setting options for a preset, refer to the <a href="http://babeljs.io/docs/plugins/#plugin-preset-options">plugin/preset options</a> documentation.</p>
+<h3><a class="anchor" aria-hidden="true" id="targets"></a><a href="#targets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>targets</code></h3>
+<p><code>{ [string]: number | string }</code>, defaults to <code>{}</code>.</p>
+<p>Takes an object of environment versions to support.</p>
+<p>Each target environment takes a number or a string (we recommend using a string when specifying minor versions like <code>node: &quot;6.10&quot;</code>).</p>
+<p>Example environments: <code>chrome</code>, <code>opera</code>, <code>edge</code>, <code>firefox</code>, <code>safari</code>, <code>ie</code>, <code>ios</code>, <code>android</code>, <code>node</code>, <code>electron</code>.</p>
+<p>The <a href="https://github.com/babel/babel-preset-env/blob/master/data/plugins.json">data</a> for this is generated by running the <a href="https://github.com/babel/babel-preset-env/blob/master/scripts/build-data.js">build-data script</a> which pulls in data from <a href="https://kangax.github.io/compat-table">compat-table</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="targetsnode"></a><a href="#targetsnode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>targets.node</code></h3>
+<p><code>number | string | &quot;current&quot; | true</code></p>
+<p>If you want to compile against the current node version, you can specify <code>&quot;node&quot;: true</code> or <code>&quot;node&quot;: &quot;current&quot;</code>, which would be the same as <code>&quot;node&quot;: process.versions.node</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="targetsbrowsers"></a><a href="#targetsbrowsers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>targets.browsers</code></h3>
+<p><code>Array&lt;string&gt; | string</code></p>
+<p>A query to select browsers (ex: last 2 versions, &gt; 5%) using <a href="https://github.com/ai/browserslist">browserslist</a>.</p>
+<p>Note, browsers' results are overridden by explicit items from <code>targets</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="targetsuglify"></a><a href="#targetsuglify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>targets.uglify</code></h3>
+<p><code>true</code></p>
+<p>When using <code>uglify-js</code> to minify your code, you may run into syntax errors when targeting later browsers since <code>uglify-js</code> does not support any ES2015+ syntax.</p>
+<p>To prevent these errors - set the <code>uglify</code> option to <code>true</code>, which enables all transformation plugins and as a result, your code is fully compiled to ES5. However, the <code>useBuiltIns</code> option will still work as before and only include the polyfills that your target(s) need.</p>
+<blockquote>
+<p>Uglify has support for ES2015 syntax via <a href="https://github.com/mishoo/UglifyJS2/tree/harmony">uglify-es</a>. If you are using syntax unsupported by <code>uglify-es</code>, we recommend using <a href="https://github.com/babel/minify">babel-minify</a>.</p>
+</blockquote>
+<blockquote>
+<p>Note: This option is deprecated in 2.x and replaced with a <a href="https://github.com/babel/babel-preset-env/pull/264"><code>forceAllTransforms</code> option</a>.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="spec"></a><a href="#spec" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>spec</code></h3>
+<p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>Enable more spec compliant, but potentially slower, transformations for any plugins in this preset that support them.</p>
+<h3><a class="anchor" aria-hidden="true" id="loose"></a><a href="#loose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>loose</code></h3>
+<p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>Enable &quot;loose&quot; transformations for any plugins in this preset that allow them.</p>
+<h3><a class="anchor" aria-hidden="true" id="modules"></a><a href="#modules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>modules</code></h3>
+<p><code>&quot;amd&quot; | &quot;umd&quot; | &quot;systemjs&quot; | &quot;commonjs&quot; | false</code>, defaults to <code>&quot;commonjs&quot;</code>.</p>
+<p>Enable transformation of ES6 module syntax to another module type.</p>
+<p>Setting this to <code>false</code> will not transform modules.</p>
+<h3><a class="anchor" aria-hidden="true" id="debug"></a><a href="#debug" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>debug</code></h3>
+<p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>Outputs the targets/plugins used and the version specified in <a href="https://github.com/babel/babel-preset-env/blob/master/data/plugins.json">plugin data version</a> to <code>console.log</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="include"></a><a href="#include" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>include</code></h3>
+<p><code>Array&lt;string&gt;</code>, defaults to <code>[]</code>.</p>
+<blockquote>
+<p>NOTE: <code>whitelist</code> is deprecated and will be removed in the next major in favor of this.</p>
+</blockquote>
+<p>An array of plugins to always include.</p>
+<p>Valid options include any:</p>
+<ul>
+<li><p><a href="https://github.com/babel/babel-preset-env/blob/master/data/plugin-features.js">Babel plugins</a> - both with (<code>babel-plugin-transform-es2015-spread</code>) and without prefix (<code>transform-es2015-spread</code>) are supported.</p></li>
+<li><p><a href="https://github.com/babel/babel-preset-env/blob/master/data/built-in-features.js">Built-ins</a>, such as <code>map</code>, <code>set</code>, or <code>object.assign</code>.</p></li>
+</ul>
+<p>This option is useful if there is a bug in a native implementation, or a combination of a non-supported feature + a supported one doesn't work.</p>
+<p>For example, Node 4 supports native classes but not spread. If <code>super</code> is used with a spread argument, then the <code>transform-es2015-classes</code> transform needs to be <code>include</code>d, as it is not possible to transpile a spread with <code>super</code> otherwise.</p>
+<blockquote>
+<p>NOTE: The <code>include</code> and <code>exclude</code> options <em>only</em> work with the <a href="https://github.com/babel/babel-preset-env/blob/master/data/plugin-features.js">plugins included with this preset</a>; so, for example, including <code>transform-do-expressions</code> or excluding <code>transform-function-bind</code> will throw errors. To use a plugin <em>not</em> included with this preset, add them to your <a href="https://babeljs.io/docs/usage/babelrc/">config</a> directly.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="exclude"></a><a href="#exclude" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>exclude</code></h3>
+<p><code>Array&lt;string&gt;</code>, defaults to <code>[]</code>.</p>
+<p>An array of plugins to always exclude/remove.</p>
+<p>The possible options are the same as the <code>include</code> option.</p>
+<p>This option is useful for &quot;blacklisting&quot; a transform like <code>transform-regenerator</code> if you don't use generators and don't want to include <code>regeneratorRuntime</code> (when using <code>useBuiltIns</code>) or for using another plugin like <a href="https://github.com/MatAtBread/fast-async">fast-async</a> instead of <a href="http://babeljs.io/docs/plugins/transform-async-generator-functions/">Babel's async-to-gen</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="usebuiltins"></a><a href="#usebuiltins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>useBuiltIns</code></h3>
+<p><code>boolean</code>, defaults to <code>false</code>.</p>
+<p>A way to apply <code>babel-preset-env</code> for polyfills (via &quot;babel-polyfill&quot;).</p>
+<blockquote>
+<p>NOTE: This does not currently polyfill experimental/stage-x built-ins like the regular &quot;babel-polyfill&quot; does.
+This will only work with npm &gt;= 3 (which should be used with Babel 6 anyway)</p>
+</blockquote>
+<pre><code class="hljs">npm <span class="hljs-keyword">install </span><span class="hljs-keyword">babel-polyfill </span>--save
+</code></pre>
+<p>This option enables a new plugin that replaces the statement <code>import &quot;babel-polyfill&quot;</code> or <code>require(&quot;babel-polyfill&quot;)</code> with individual requires for <code>babel-polyfill</code> based on environment.</p>
+<blockquote>
+<p>NOTE: Only use <code>require(&quot;babel-polyfill&quot;);</code> once in your whole app.
+Multiple imports or requires of <code>babel-polyfill</code> will throw an error since it can cause global collisions and other issues that are hard to trace.
+We recommend creating a single entry file that only contains the <code>require</code> statement.</p>
+</blockquote>
+<p><strong>In</strong></p>
+<pre><code class="hljs css languages- js"><span class="hljs-keyword">import</span> <span class="hljs-string">"babel-polyfill"</span>;
+</code></pre>
+<p><strong>Out (different based on environment)</strong></p>
+<pre><code class="hljs css languages- js"><span class="hljs-keyword">import</span> <span class="hljs-string">"core-js/modules/es7.string.pad-start"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"core-js/modules/es7.string.pad-end"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"core-js/modules/web.timers"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"core-js/modules/web.immediate"</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">"core-js/modules/web.dom.iterable"</span>;
+</code></pre>
+<p>This will also work for <code>core-js</code> directly (<code>import &quot;core-js&quot;;</code>)</p>
+<pre><code class="hljs">npm <span class="hljs-keyword">install </span>core-<span class="hljs-keyword">js </span>--save
+</code></pre>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h2>
+<h3><a class="anchor" aria-hidden="true" id="export-with-various-targets"></a><a href="#export-with-various-targets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Export with various targets</h3>
+<pre><code class="hljs css languages- js"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="target-only-chrome-52"></a><a href="#target-only-chrome-52" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Target only Chrome 52</h4>
+<p><strong>.babelrc</strong></p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [<span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"chrome"</span>: <span class="hljs-number">52</span>
+      }
+    }]
+  ]
+}
+</code></pre>
+<p><strong>Out</strong></p>
+<pre><code class="hljs css languages- js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{}
+exports.A = A;
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="target-chrome-52-with-webpack-2-rollup-and-loose-mode"></a><a href="#target-chrome-52-with-webpack-2-rollup-and-loose-mode" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Target Chrome 52 with webpack 2/rollup and loose mode</h4>
+<p><strong>.babelrc</strong></p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [<span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"chrome"</span>: <span class="hljs-number">52</span>
+      },
+      <span class="hljs-attr">"modules"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"loose"</span>: <span class="hljs-literal">true</span>
+    }]
+  ]
+}
+</code></pre>
+<p><strong>Out</strong></p>
+<pre><code class="hljs css languages- js"><span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{}
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="target-specific-browsers-via-browserslist"></a><a href="#target-specific-browsers-via-browserslist" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Target specific browsers via browserslist</h4>
+<p><strong>.babelrc</strong></p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [<span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"chrome"</span>: <span class="hljs-number">52</span>,
+        <span class="hljs-attr">"browsers"</span>: [<span class="hljs-string">"last 2 versions"</span>, <span class="hljs-string">"safari 7"</span>]
+      }
+    }]
+  ]
+}
+</code></pre>
+<p><strong>Out</strong></p>
+<pre><code class="hljs css languages- js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">var</span> A = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">A</span>(<span class="hljs-params"></span>) </span>{
+  _classCallCheck(<span class="hljs-keyword">this</span>, A);
+};
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="target-latest-node-via-node-true-or-node-current"></a><a href="#target-latest-node-via-node-true-or-node-current" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Target latest node via <code>node: true</code> or <code>node: &quot;current&quot;</code></h4>
+<p><strong>.babelrc</strong></p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [<span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"node"</span>: <span class="hljs-string">"current"</span>
+      }
+    }]
+  ]
+}
+</code></pre>
+<p><strong>Out</strong></p>
+<pre><code class="hljs css languages- js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{}
+exports.A = A;
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="show-debug-output"></a><a href="#show-debug-output" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Show debug output</h3>
+<p><strong>.babelrc</strong></p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [ <span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"safari"</span>: <span class="hljs-number">10</span>
+      },
+      <span class="hljs-attr">"modules"</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">"useBuiltIns"</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">"debug"</span>: <span class="hljs-literal">true</span>
+    }]
+  ]
+}
+</code></pre>
+<p><strong>stdout</strong></p>
+<pre><code class="hljs css languages- sh">Using targets:
+{
+  <span class="hljs-string">"safari"</span>: 10
+}
+
+Modules transform: <span class="hljs-literal">false</span>
+
+Using plugins:
+  transform-exponentiation-operator {}
+  transform-async-to-generator {}
+
+Using polyfills:
+  es7.object.values {}
+  es7.object.entries {}
+  es7.object.get-own-property-descriptors {}
+  web.timers {}
+  web.immediate {}
+  web.dom.iterable {}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="include-and-exclude-specific-plugins-built-ins"></a><a href="#include-and-exclude-specific-plugins-built-ins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Include and exclude specific plugins/built-ins</h3>
+<blockquote>
+<p>always include arrow functions, explicitly exclude generators</p>
+</blockquote>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [<span class="hljs-string">"env"</span>, {
+      <span class="hljs-attr">"targets"</span>: {
+        <span class="hljs-attr">"browsers"</span>: [<span class="hljs-string">"last 2 versions"</span>, <span class="hljs-string">"safari &gt;= 7"</span>]
+      },
+      <span class="hljs-attr">"include"</span>: [<span class="hljs-string">"transform-es2015-arrow-functions"</span>, <span class="hljs-string">"es6.map"</span>],
+      <span class="hljs-attr">"exclude"</span>: [<span class="hljs-string">"transform-regenerator"</span>, <span class="hljs-string">"es6.set"</span>]
+    }]
+  ]
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="caveats"></a><a href="#caveats" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caveats</h2>
+<p>If you get a <code>SyntaxError: Unexpected token ...</code> error when using the <a href="babel-plugin-transform-object-rest-spread">object-rest-spread</a> transform then make sure the plugin has been updated to, at least, <code>v6.19.0</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="other-cool-projects"></a><a href="#other-cool-projects" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other Cool Projects</h2>
+<ul>
+<li><a href="https://github.com/christophehurpeau/babel-preset-modern-browsers">babel-preset-modern-browsers</a></li>
+<li>?</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/babel-register">← babel-register</a><a class="docs-next button" href="/docs/en/babel-preset-es2015">babel-preset-es2015 →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#how-it-works">How it Works</a><ul class="toc-headings"><li><a href="#determine-environment-support-for-ecmascript-features">Determine environment support for ECMAScript features</a></li><li><a href="#maintain-a-mapping-between-javascript-features-and-babel-plugins">Maintain a mapping between JavaScript features and Babel plugins</a></li><li><a href="#support-all-plugins-in-babel-that-are-considered-latest">Support all plugins in Babel that are considered <code>latest</code></a></li><li><a href="#determine-the-lowest-common-denominator-of-plugins-to-be-included-in-the-preset">Determine the lowest common denominator of plugins to be included in the preset</a></li><li><a href="#support-a-target-option-node-current-to-compile-for-the-currently-running-node-version">Support a target option <code>&quot;node&quot;: &quot;current&quot;</code> to compile for the currently running node version.</a></li><li><a href="#support-a-browsers-option-like-autoprefixer">Support a <code>browsers</code> option like autoprefixer</a></li></ul></li><li><a href="#install">Install</a></li><li><a href="#usage">Usage</a></li><li><a href="#options">Options</a><ul class="toc-headings"><li><a href="#targets"><code>targets</code></a></li><li><a href="#targetsnode"><code>targets.node</code></a></li><li><a href="#targetsbrowsers"><code>targets.browsers</code></a></li><li><a href="#targetsuglify"><code>targets.uglify</code></a></li><li><a href="#spec"><code>spec</code></a></li><li><a href="#loose"><code>loose</code></a></li><li><a href="#modules"><code>modules</code></a></li><li><a href="#debug"><code>debug</code></a></li><li><a href="#include"><code>include</code></a></li><li><a href="#exclude"><code>exclude</code></a></li><li><a href="#usebuiltins"><code>useBuiltIns</code></a></li></ul></li><li><a href="#examples">Examples</a><ul class="toc-headings"><li><a href="#export-with-various-targets">Export with various targets</a></li><li><a href="#show-debug-output">Show debug output</a></li><li><a href="#include-and-exclude-specific-plugins-built-ins">Include and exclude specific plugins/built-ins</a></li></ul></li><li><a href="#caveats">Caveats</a></li><li><a href="#other-cool-projects">Other Cool Projects</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/babel.svg" alt="Babel" width="66" height="58"/></a><div><h5>文档</h5><a href="/docs/en/learn.html">学习 ES2015</a></div><div><h5>社区</h5><a href="/en/users.html">用户</a><a href="http://stackoverflow.com/questions/tagged/babeljs" rel="noopener noreferrer" target="_blank">Stack Overflow</a><a href="https://babeljs.slack.com/">Slack 通道</a><a href="https://twitter.com/babeljs" rel="noopener noreferrer" target="_blank">Twitter</a></div><div><h5>更多</h5><a href="/blog">博客</a><a href="https://github.com/babel">GitHub Org</a><a href="https://github.com/babel/babel">GitHub Repo</a><a href="https://github.com/babel/website">Website Repo</a><a href="https://old.babeljs.io"> 旧版网址 6.x </a><a href="http://henryzoo.com/babel.github.io">旧版网址 5.x </a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                
+                apiKey: 'd42906b043c5422ea07b44fd49c40a0d',
+                indexName: 'babeljs',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>babel-preset-minify · Babel</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="+ [Install](#install)"/><meta name="docsearch:version" content="6.x"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="babel-preset-minify · Babel"/><meta property="og:type" content="website"/><meta property="og:url" content="https://babeljs.io/index.html"/><meta property="og:description" content="+ [Install](#install)"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"/><link rel="alternate" type="application/atom+xml" href="https://babeljs.io/blog/atom.xml" title="Babel Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://babeljs.io/blog/feed.xml" title="Babel Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-114990275-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/babel.svg" alt="Babel"/></a><a href="/versions"><h3>6.x</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en" target="_self">文档</a></li><li class=""><a href="/en/setup" target="_self">配置</a></li><li class=""><a href="/en/repl" target="_self">试用</a></li><li class=""><a href="/blog" target="_self">博客</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="https://opencollective.com/babel" target="_self">赞助</a></li><li class=""><a href="/en/team" target="_self">团队</a></li><li class=""><a href="https://github.com/babel/babel" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Presets</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">General</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en">What is Babel?</a></li><li class="navListItem"><a class="navItem" href="/docs/en/learn">Learn ES2015</a></li><li class="navListItem"><a class="navItem" href="/docs/en/editors">Editors</a></li><li class="navListItem"><a class="navItem" href="/docs/en/plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/en/caveats">Caveats</a></li><li class="navListItem"><a class="navItem" href="/docs/en/faq">FAQ</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/babelrc">.babelrc</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-cli">babel-cli</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-polyfill">babel-polyfill</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-plugin-transform-runtime">transform-runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-register">babel-register</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Presets</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-env">env</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-es2015">es2015</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-es2016">es2016</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-es2017">es2017</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-latest">latest</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-stage-0">stage-0</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-stage-1">stage-1</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-stage-2">stage-2</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-stage-3">stage-3</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-flow">flow</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-preset-react">react</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/babel-preset-minify">minify</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tooling</h3><ul><li class="navListItem"><a class="navItem" href="/docs/en/babylon">babylon</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-core">babel-core</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-generator">babel-generator</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-code-frame">babel-code-frame</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-helpers">babel-helpers</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-runtime">babel-runtime</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-template">babel-template</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-traverse">babel-traverse</a></li><li class="navListItem"><a class="navItem" href="/docs/en/babel-types">babel-types</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/babel/website/blob/master/docs/preset-minify.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">babel-preset-minify</h1></header><article><div><span><ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#options">Options</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h2>
+<pre><code class="hljs css languages- sh">npm install --save-dev babel-preset-minify
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h2>
+<h3><a class="anchor" aria-hidden="true" id="via-babelrc-recommended"></a><a href="#via-babelrc-recommended" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Via <code>.babelrc</code> (Recommended)</h3>
+<p><strong>.babelrc</strong></p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [<span class="hljs-string">"minify"</span>]
+}
+</code></pre>
+<p>or pass in options -</p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [[<span class="hljs-string">"minify"</span>, {
+    <span class="hljs-attr">"mangle"</span>: {
+      <span class="hljs-attr">"exclude"</span>: [<span class="hljs-string">"MyCustomError"</span>]
+    },
+    <span class="hljs-attr">"unsafe"</span>: {
+      <span class="hljs-attr">"typeConstructors"</span>: <span class="hljs-literal">false</span>
+    },
+    <span class="hljs-attr">"keepFnName"</span>: <span class="hljs-literal">true</span>
+  }]]
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="via-cli"></a><a href="#via-cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Via CLI</h3>
+<pre><code class="hljs css languages- sh">babel script.js --presets minify
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="via-node-api"></a><a href="#via-node-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Via Node API</h3>
+<pre><code class="hljs css languages- javascript"><span class="hljs-built_in">require</span>(<span class="hljs-string">"babel-core"</span>).transform(<span class="hljs-string">"code"</span>, {
+  <span class="hljs-attr">presets</span>: [<span class="hljs-string">"minify"</span>]
+});
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="options"></a><a href="#options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Options</h2>
+<p>Two types of options:</p>
+<ol>
+<li>1-1 mapping with plugin</li>
+<li>The same option passed to multiple plugins</li>
+</ol>
+<h4><a class="anchor" aria-hidden="true" id="1-1-mapping-with-plugin"></a><a href="#1-1-mapping-with-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1-1 mapping with plugin</h4>
+<ul>
+<li><code>false</code> - disable plugin</li>
+<li><code>true</code> - enable plugin</li>
+<li><code>{ ...pluginOpts }</code> - enable plugin and pass pluginOpts to plugin</li>
+</ul>
+<table>
+<thead>
+<tr><th>OptionName</th><th>Plugin</th><th>DefaultValue</th></tr>
+</thead>
+<tbody>
+<tr><td>booleans</td><td><a href="../../packages/babel-plugin-transform-minify-booleans">transform-minify-booleans</a></td><td>true</td></tr>
+<tr><td>builtIns</td><td><a href="../../packages/babel-plugin-minify-builtins">minify-builtins</a></td><td>true</td></tr>
+<tr><td>consecutiveAdds</td><td><a href="../../packages/babel-plugin-transform-inline-consecutive-adds">transform-inline-consecutive-adds</a></td><td>true</td></tr>
+<tr><td>deadcode</td><td><a href="../../packages/babel-plugin-minify-dead-code-elimination">minify-dead-code-elimination</a></td><td>true</td></tr>
+<tr><td>evaluate</td><td><a href="../../packages/babel-plugin-minify-constant-folding">minify-constant-folding</a></td><td>true</td></tr>
+<tr><td>flipComparisons</td><td><a href="../../packages/babel-plugin-minify-flip-comparisons">minify-flip-comparisons</a></td><td>true</td></tr>
+<tr><td>guards</td><td><a href="../../packages/babel-plugin-minify-guarded-expressions">minify-guarded-expressions</a></td><td>true</td></tr>
+<tr><td>infinity</td><td><a href="../../packages/babel-plugin-minify-infinity">minify-infinity</a></td><td>true</td></tr>
+<tr><td>mangle</td><td><a href="../../packages/babel-plugin-minify-mangle-names">minify-mangle-names</a></td><td>true</td></tr>
+<tr><td>memberExpressions</td><td><a href="../../packages/babel-plugin-transform-member-expression-literals">transform-member-expression-literals</a></td><td>true</td></tr>
+<tr><td>mergeVars</td><td><a href="../../packages/babel-plugin-transform-merge-sibling-variables">transform-merge-sibling-variables</a></td><td>true</td></tr>
+<tr><td>numericLiterals</td><td><a href="../../packages/babel-plugin-minify-numeric-literals">minify-numeric-literals</a></td><td>true</td></tr>
+<tr><td>propertyLiterals</td><td><a href="../../packages/babel-plugin-transform-property-literals">transform-property-literals</a></td><td>true</td></tr>
+<tr><td>regexpConstructors</td><td><a href="../../packages/babel-plugin-transform-regexp-constructors">transform-regexp-constructors</a></td><td>true</td></tr>
+<tr><td>removeConsole</td><td><a href="../../packages/babel-plugin-transform-remove-console">transform-remove-console</a></td><td>false</td></tr>
+<tr><td>removeDebugger</td><td><a href="../../packages/babel-plugin-transform-remove-debugger">transform-remove-debugger</a></td><td>false</td></tr>
+<tr><td>removeUndefined</td><td><a href="../../packages/babel-plugin-transform-remove-undefined">transform-remove-undefined</a></td><td>true</td></tr>
+<tr><td>replace</td><td><a href="../../packages/babel-plugin-minify-replace">minify-replace</a></td><td>true</td></tr>
+<tr><td>simplify</td><td><a href="../../packages/babel-plugin-minify-simplify">minify-simplify</a></td><td>true</td></tr>
+<tr><td>simplifyComparisons</td><td><a href="../../packages/babel-plugin-transform-simplify-comparison-operators">transform-simplify-comparison-operators</a></td><td>true</td></tr>
+<tr><td>typeConstructors</td><td><a href="../../packages/babel-plugin-minify-type-constructors">minify-type-constructors</a></td><td>true</td></tr>
+<tr><td>undefinedToVoid</td><td><a href="../../packages/babel-plugin-transform-undefined-to-void">transform-undefined-to-void</a></td><td>true</td></tr>
+</tbody>
+</table>
+<h4><a class="anchor" aria-hidden="true" id="the-same-option-passed-to-multiple-plugins"></a><a href="#the-same-option-passed-to-multiple-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The same option passed to multiple plugins</h4>
+<ul>
+<li>When multiple plugins require the same option, it's easier to declare it in one place. These options are passed on to two or more plugins.</li>
+</ul>
+<table>
+<thead>
+<tr><th>OptionName</th><th>Plugins</th></tr>
+</thead>
+<tbody>
+<tr><td>keepFnName</td><td>Passed to <a href="../../packages/babel-plugin-minify-mangle-names">mangle</a> &amp; <a href="../../packages/babel-plugin-minify-dead-code-elimination">deadcode</a></td></tr>
+<tr><td>keepClassName</td><td>Passed to <a href="../../packages/babel-plugin-minify-mangle-names">mangle</a> &amp; <a href="../../packages/babel-plugin-minify-dead-code-elimination">deadcode</a></td></tr>
+<tr><td>tdz</td><td>Passed to <a href="../../packages/babel-plugin-minify-builtins">builtIns</a>, <a href="../../packages/babel-plugin-minify-constant-folding">evaluate</a>, <a href="../../packages/babel-plugin-minify-dead-code-elimination">deadcode</a>, <a href="../../packages/babel-plugin-transform-remove-undefined">removeUndefined</a></td></tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [[<span class="hljs-string">"minify"</span>, {
+    <span class="hljs-attr">"evaluate"</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">"mangle"</span>: <span class="hljs-literal">true</span>
+  }]]
+}
+</code></pre>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"presets"</span>: [[<span class="hljs-string">"minify"</span>, {
+    <span class="hljs-attr">"mangle"</span>: {
+      <span class="hljs-attr">"exclude"</span>: [<span class="hljs-string">"ParserError"</span>, <span class="hljs-string">"NetworkError"</span>]
+    }
+  }]]
+}
+</code></pre>
+<pre><code class="hljs css languages- json">{
+  "presets": [["minify", {
+    "keepFnName": true
+  }]]
+}
+// is the same as
+{
+  "presets": [["minify", {
+    "mangle": {
+      "keepFnName": true
+    },
+    "deadcode": {
+      "keepFnName": true
+    }
+  }]]
+}
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/babel-preset-react">← babel-preset-react</a><a class="docs-next button" href="/docs/en/babylon">Next →</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#install">Install</a></li><li><a href="#usage">Usage</a><ul class="toc-headings"><li><a href="#via-babelrc-recommended">Via <code>.babelrc</code> (Recommended)</a></li><li><a href="#via-cli">Via CLI</a></li><li><a href="#via-node-api">Via Node API</a></li></ul></li><li><a href="#options">Options</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/babel.svg" alt="Babel" width="66" height="58"/></a><div><h5>文档</h5><a href="/docs/en/learn.html">学习 ES2015</a></div><div><h5>社区</h5><a href="/en/users.html">用户</a><a href="http://stackoverflow.com/questions/tagged/babeljs" rel="noopener noreferrer" target="_blank">Stack Overflow</a><a href="https://babeljs.slack.com/">Slack 通道</a><a href="https://twitter.com/babeljs" rel="noopener noreferrer" target="_blank">Twitter</a></div><div><h5>更多</h5><a href="/blog">博客</a><a href="https://github.com/babel">GitHub Org</a><a href="https://github.com/babel/babel">GitHub Repo</a><a href="https://github.com/babel/website">Website Repo</a><a href="https://old.babeljs.io"> 旧版网址 6.x </a><a href="http://henryzoo.com/babel.github.io">旧版网址 5.x </a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                
+                apiKey: 'd42906b043c5422ea07b44fd49c40a0d',
+                indexName: 'babeljs',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

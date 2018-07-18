@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>tools/browserify/usage · Babel</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="#### Via CLI"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="tools/browserify/usage · Babel"/><meta property="og:type" content="website"/><meta property="og:url" content="https://babeljs.io/index.html"/><meta property="og:description" content="#### Via CLI"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css"/><link rel="alternate" type="application/atom+xml" href="https://babeljs.io/blog/atom.xml" title="Babel Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://babeljs.io/blog/feed.xml" title="Babel Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-114990275-1', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/babel.svg" alt="Babel"/></a><a href="/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/next" target="_self">文档</a></li><li class=""><a href="/en/setup" target="_self">配置</a></li><li class=""><a href="/en/repl" target="_self">试用</a></li><li class=""><a href="/blog" target="_self">博客</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="https://opencollective.com/babel" target="_self">赞助</a></li><li class=""><a href="/en/team" target="_self">团队</a></li><li class=""><a href="https://github.com/babel/babel" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/babel/website/blob/master/docs/tools/browserify/usage.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 class="postHeaderTitle">tools/browserify/usage</h1></header><article><div><span><h4><a class="anchor" aria-hidden="true" id="via-cli"></a><a href="#via-cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Via CLI</h4>
+<pre><code class="hljs css languages- sh">browserify script.js -t babelify --outfile bundle.js
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="via-node-api"></a><a href="#via-node-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Via Node API</h4>
+<pre><code class="hljs css languages- js">browserify({ <span class="hljs-attr">debug</span>: <span class="hljs-literal">true</span> })
+  .transform(babelify);
+</code></pre>
+<p>Or a more complete example:</p>
+<pre><code class="hljs css languages- js"><span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">"fs"</span>);
+<span class="hljs-keyword">var</span> browserify = <span class="hljs-built_in">require</span>(<span class="hljs-string">"browserify"</span>);
+<span class="hljs-keyword">var</span> babelify = <span class="hljs-built_in">require</span>(<span class="hljs-string">"babelify"</span>);
+
+browserify({ <span class="hljs-attr">debug</span>: <span class="hljs-literal">true</span> })
+  .transform(babelify)
+  .require(<span class="hljs-string">"./script.js"</span>, { <span class="hljs-attr">entry</span>: <span class="hljs-literal">true</span> })
+  .bundle()
+  .on(<span class="hljs-string">"error"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Error: "</span> + err.message); })
+  .pipe(fs.createWriteStream(<span class="hljs-string">"bundle.js"</span>));
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="passing-options"></a><a href="#passing-options" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Passing options</h4>
+<p><strong>CLI</strong></p>
+<pre><code class="hljs css languages- sh">browserify -d -e script.js -t [ babelify --comments <span class="hljs-literal">false</span> ]
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="node-api"></a><a href="#node-api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Node API</h5>
+<pre><code class="hljs css languages- js">browserify().transform(babelify.configure({
+  <span class="hljs-attr">comments</span>: <span class="hljs-literal">false</span>
+}))
+</code></pre>
+<h5><a class="anchor" aria-hidden="true" id="packagejson"></a><a href="#packagejson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>package.json</h5>
+<pre><code class="hljs css languages- json">{
+  <span class="hljs-attr">"transform"</span>: [[<span class="hljs-string">"babelify"</span>, { <span class="hljs-attr">"comments"</span>: <span class="hljs-literal">false</span> }]]
+}
+</code></pre>
+<blockquote class="babel-callout babel-callout-info">
+  <p>
+    For more information see the <a href="https://github.com/babel/babelify">babel/babelify repo</a>.
+  </p>
+</blockquote>
+</span></div></article></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/babel.svg" alt="Babel" width="66" height="58"/></a><div><h5>文档</h5><a href="/docs/en/learn.html">学习 ES2015</a></div><div><h5>社区</h5><a href="/en/users.html">用户</a><a href="http://stackoverflow.com/questions/tagged/babeljs" rel="noopener noreferrer" target="_blank">Stack Overflow</a><a href="https://babeljs.slack.com/">Slack 通道</a><a href="https://twitter.com/babeljs" rel="noopener noreferrer" target="_blank">Twitter</a></div><div><h5>更多</h5><a href="/blog">博客</a><a href="https://github.com/babel">GitHub Org</a><a href="https://github.com/babel/babel">GitHub Repo</a><a href="https://github.com/babel/website">Website Repo</a><a href="https://old.babeljs.io"> 旧版网址 6.x </a><a href="http://henryzoo.com/babel.github.io">旧版网址 5.x </a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                
+                apiKey: 'd42906b043c5422ea07b44fd49c40a0d',
+                indexName: 'babeljs',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
