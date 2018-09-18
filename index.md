@@ -9,6 +9,11 @@ third_party_js:
 ---
 
 <div class="hero">
+  <a class="hero-tidelift-banner__anchor" href="https://tidelift.com/subscription/npm/babel">
+    <div class="hero-tidelift-banner">
+      Get Professionally Supported Babel
+    </div>
+  </a>
   <div class="hero__content">
     <h1>Babel 是一个 JavaScript 编译器。</h1>
     <p>今天就开始使用下一代 JavaScript 语法吧！</p>
@@ -41,7 +46,11 @@ third_party_js:
 
     <h3>开源团队（金牌）</h3>
     <ul class="sponsors-opencollective-tier tier-gold-sponsors">
-      <li><a href="https://code.facebook.com/projects" title="Facebook Open Source"><img src="https://opencollective.com/proxy/images/?src=http%3A%2F%2Fres.cloudinary.com%2Fopencollective%2Fimage%2Fupload%2Fv1508519428%2FS9gk78AS_400x400_fulq2l.jpg&amp;height=120"></a></li><li><a href="https://www.ampproject.org/" title="AMP Project"><img src="https://opencollective.com/proxy/images/?src=https%3A%2F%2Fopencollective-production.s3-us-west-1.amazonaws.com%2F68ed8b70-ebf2-11e6-9958-cb7e79408c56.png&amp;height=120"></a></li><li><a href="http://opensource.coinbase.engineering/" title="Coinbase"><img src="https://opencollective.com/proxy/images/?src=https%3A%2F%2Fopencollective-production.s3-us-west-1.amazonaws.com%2F0e10dbb0-0c46-11e8-8c0a-8594e8ca6b48.jpg&height=120"></a></li>
+      <li><a href="https://code.facebook.com/projects" title="Facebook Open Source"><img src="https://opencollective.com/proxy/images/?src=http%3A%2F%2Fres.cloudinary.com%2Fopencollective%2Fimage%2Fupload%2Fv1508519428%2FS9gk78AS_400x400_fulq2l.jpg&amp;height=100"></a></li>
+      <li><a href="https://www.ampproject.org/" title="AMP Project"><img src="https://opencollective.com/proxy/images/?src=https%3A%2F%2Fopencollective-production.s3-us-west-1.amazonaws.com%2F68ed8b70-ebf2-11e6-9958-cb7e79408c56.png&amp;height=100"></a></li>
+      <li><a href="http://opensource.coinbase.engineering/" title="Coinbase"><img src="https://opencollective.com/proxy/images/?src=https%3A%2F%2Fopencollective-production.s3-us-west-1.amazonaws.com%2F0e10dbb0-0c46-11e8-8c0a-8594e8ca6b48.jpg&height=100"></a></li>
+      <li><a href="https://www.salesforce.com/" title="Salesforce"><img src="https://images.opencollective.com/proxy/images/?src=https%3A%2F%2Flogo.clearbit.com%2Fsalesforce.com&height=100"></a></li>
+      <li><a href="https://bitsrc.io" title="Bit"><img src="https://images.opencollective.com/proxy/images/?src=https%3A%2F%2Flogo.clearbit.com%2Fbitsrc.io&height=100"></a></li>
     </ul>
     <a class="button" href="https://opencollective.com/babel" target="_blank"><img alt="Become a sponsor" src="https://opencollective.com/static/images/become_sponsor.svg"></a>
 
@@ -54,7 +63,7 @@ third_party_js:
 
     <h3>开源团队（银牌）</h3>
     <ul class="sponsors-opencollective-tier tier-silver-sponsors">
-      <li><a href="https://webflow.com" title="Webflow"><img src="https://opencollective.com/proxy/images/?src=https%3A%2F%2Fopencollective-production.s3-us-west-1.amazonaws.com%2F4a5024b0-8cf2-11e7-b1a2-b30b1de1463c.png&amp;height=96"></a></li>
+      <li><a href="https://webflow.com" title="Webflow"><img src="https://opencollective.com/proxy/images/?src=https%3A%2F%2Fopencollective-production.s3-us-west-1.amazonaws.com%2F4a5024b0-8cf2-11e7-b1a2-b30b1de1463c.png&amp;height=80"></a></li>
     </ul>
     <a class="button" href="https://opencollective.com/babel" target="_blank"><img alt="Become a sponsor" src="https://opencollective.com/static/images/become_sponsor.svg"></a>
 
