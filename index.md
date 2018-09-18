@@ -17,6 +17,7 @@ third_party_js:
   <div class="hero__content">
     <h1>Babel 是一个 JavaScript 编译器。</h1>
     <p>今天就开始使用下一代 JavaScript 语法吧！</p>
+    <p>Babel V7 请认准<span style="color:red;font-weight:300px;">印记中文</span> <a href="https://babel.docschina.org">https://babel.docschina.org</a></p>
 
     <div class="hero-repl" hidden>
       <div class="hero-repl__editor">
