@@ -5,7 +5,7 @@ description:
 permalink: /docs/plugins/
 ---
 
-Babel 是一个编译器。 从宏观角度看，它将运行代码分为3个阶段: 解析，转换，及生成(与其他编译器相同).
+Babel 是一个编译器。 从宏观角度看，它将运行代码分为3个阶段: 解析，转换，及生成（与其他编译器相同）。
 
 > 关于编译器的优秀/简单的教程，请查看 [the-super-tiny-compiler](https://github.com/thejameskyle/the-super-tiny-compiler)，同时它也从宏观角度上解释了 Babel 本身是如何工作的。
 

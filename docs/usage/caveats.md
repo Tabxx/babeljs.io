@@ -7,7 +7,7 @@ permalink: /docs/usage/caveats/
 
 ## Polyfills
 
-为了使某些特性工作，他们需要特定的 polyfills. 通过使用 [babel-polyfill](/docs/usage/polyfill) 你可以满足 **所有** Babel 特性的要求。
+为了使某些特性工作，他们需要特定的 polyfills。通过使用 [babel-polyfill](/docs/usage/polyfill) 你可以满足 **所有** Babel 特性的要求。
 
 你也许想根据你的需要选择性的引入：
 

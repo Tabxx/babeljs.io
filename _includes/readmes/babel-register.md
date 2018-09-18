@@ -2,7 +2,7 @@
 
 > require 钩子会将自己绑定到 node 的 require 上并自动编译文件。
 
-一个使用 Babel 的方法是通过 require 钩子。 require 钩子会将自己绑定到 node 的 `require` 上并自动编译文件。这等同于 CoffeeScript 中的 [coffee-script/register](http://coffeescript.org/v2/annotated-source/register.html).
+一个使用 Babel 的方法是通过 require 钩子。 require 钩子会将自己绑定到 node 的 `require` 上并自动编译文件。这等同于 CoffeeScript 中的 [coffee-script/register](http://coffeescript.org/v2/annotated-source/register.html)。
 
 ## 安装
 
