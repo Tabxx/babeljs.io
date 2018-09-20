@@ -9,11 +9,6 @@ third_party_js:
 ---
 
 <div class="hero">
-  <a class="hero-tidelift-banner__anchor" href="https://tidelift.com/subscription/npm/babel">
-    <div class="hero-tidelift-banner">
-      Get Professionally Supported Babel
-    </div>
-  </a>
   <div class="hero__content">
     <h1>Babel 是一个 JavaScript 编译器。</h1>
     <p>今天就开始使用下一代 JavaScript 语法吧！</p>
